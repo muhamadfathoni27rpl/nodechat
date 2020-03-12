@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
+    <script>
+            function validateForm() {
+              var x = document.forms["cok"]["siswa"]["nisn"].value;
+              if (x == "") {
+                  console.log("KOSONG");
+                alert("Name must be filled out");
+                return false;
+              }
+            }
+            </script>
+    <style> 
+        /*add full-width input fields*/ 
+        input[type=text], 
+        input[type=password] { 
+            width: 100%; 
+            padding: 12px 20px; 
+            margin: 8px 0; 
+            display: inline-block; 
+            border: 2px solid #ccc; 
+            box-sizing: border-box; 
+        } 
+        /* set a style for all buttons*/ 
+        button { 
+            background-color: green; 
+            color: white; 
+            padding: 14px 20px; 
+            margin: 8px 0; 
+            cursor: pointer; 
+            width: 100%; 
+        } 
+        /*set styles for the cancel button*/ 
+        .cancelbtn { 
+            padding: 14px 20px; 
+            background-color: #FF2E00; 
+        } 
+        /*float cancel and signup buttons and add an equal width*/ 
+        .cancelbtn, 
+        .signupbtn { 
+            float: left; 
+            width: 50% 
+        } 
+        /*add padding to container elements*/ 
+        .container { 
+            padding: 16px; 
+        } 
+        
+        .form-group {
+            margin: 10px;
+        }
+        /*define the modal’s background*/ 
+          
+        .modal { 
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0, 0, 0); 
+            background-color: rgba(0, 0, 0, 0.4); 
+            padding-top: 60px; 
+        } 
+        /*define the modal-content background*/ 
+          
+        .modal-content { 
+            background-color: #fefefe; 
+            margin: 5% auto 15% auto; 
+            border: 1px solid #888; 
+            width: 80%; 
+        } 
+        /*define the close button*/ 
+          
+        .close { 
+            position: absolute; 
+            right: 35px; 
+            top: 15px; 
+            color: #000; 
+            font-size: 40px; 
+            font-weight: bold; 
+        } 
+        /*define the close hover and focus effects*/ 
+          
+        .close:hover, 
+        .close:focus { 
+            color: red; 
+            cursor: pointer; 
+        } 
+          
+        .clearfix::after { 
+            content: ""; 
+            clear: both; 
+            display: table; 
+        } 
+          
+        @media screen and (max-width: 300px) { 
+            .cancelbtn, 
+            .signupbtn { 
+                width: 100%; 
+            } 
+        } 
+    </style> 
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CRUD</title>
+</head>
+<body>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                  <a class="navbar-brand" href="#">[Mr.Ti]</a>
+                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                            <a class="nav-item nav-link active" href="start">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">                            
+                            <a class="nav-item nav-link" href="crud">CRUD</a>     
+                    </li>    
+                    <li class="nav-item">                            
+                            <a class="nav-item nav-link" href="buat">Chat Hacker</a>     
+                    </li>   
+                    <li class="nav-item">                            
+                            <a class="nav-item nav-link" href="email">Send E-Mail</a>     
+                    </li>  
+                  </ul>
+                  <div class="nav navbar-nav navbar-right">  
+                        <ul>
+                          <li class="btn btn-info btn-lg">                            
+                              <a class="glyphicon glyphicon-user" href="/profile"></a>     
+                          </li>  
+                          <li class="btn btn-info btn-lg">                            
+                              <a class="glyphicon glyphicon-log-out" href="/out"></a>     
+                          </li>                                               
+                      </ul>            
+                    </div>
+                </div>
+           
+              </nav>  
+    <div class="container">        
+        <h1 class="text-center">Easy CRUD</h1>
+        <center><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Tambah Data</button> </center>                            
+  
+        <div id="id01" class="modal"> 
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span> 
+            <form class="modal-content animate" action="tambah" method="POST" onsubmit="return validateForm()"> 
+                    <div class="form-group">
+                        <h3 style="text-align: center;"><b>Tambah Siswa</b></h3>
+                            <label><b>Nama Siswa</b></label> 
+                            <input class="form-control" type="text" placeholder="Masukan Nama Siswa" name="siswa" >    
+                          </div>
+                          <div class="form-group">
+                                <label><b>Nomer Induk Siswa Nasional</b></label> 
+                                <input class="form-control" type="text" placeholder="Masukan NISN" name="nisn" > 
+                                <small id="emailHelp" class="form-text text-muted">Siswa Tidak akan Terdaftar Jika NISN sudah ada.</small>
+                          </div>
+                          <div class="form-group"> 
+                                <button type="button" class="btn btn-outline-danger" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button> 
+                                <button type="submit" class="btn btn-outline-dark">Tambah</button> 
+                            </div> 
+            </form> 
+        </div> 
+            <div class="row" style="marginTop:5%;">    
+            <% users.forEach(function (user) { %>
+                <div style="margin-top: 4%" class="col-md-3">                            
+                    <div class="card text-white bg-info mb-5">                     
+                        <img src="" class="card-img-top" alt=""/>
+                            <div class="card-body">
+                                <h5 class="card-title">Nama Siswa : <%= user.siswa %></h5>
+                                <p class="card-text">NISN : <%= user.nisn %></p>
+                                <ul >
+                                    <a onclick="document.getElementById('<%=user._id%>').style.display='block'" style="width:auto;" class="btn btn-warning" data-toggle="modal" data-target="#exampleeModal" data-whatever="@mdo" style="marginTop:'5%';textAlign:center;">Edit</a>​​​ ⠀
+                                    
+
+                    <!-- MODAL GAWE Edit -->
+                    <div id="<%=user._id%>" class="modal"> 
+                        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span> 
+                        <form class="modal-content animate" action="edit/<%=user._id%>" method="POST" onsubmit="return validateForm()"> 
+                                     <div class="form-group">
+                                            <h3 style="text-align: center;"><b>Edit Siswa</b></h3>
+                                            <label><b>Nama Siswa</b></label> 
+                                        <input class="form-control" type="text" value="<%= user.siswa %>" placeholder="Masukan Nama Siswa" name="siswas" >    
+                                      </div>
+                                      <div class="form-group">
+                                            <label><b>Nomer Induk Siswa Nasional</b></label> 
+                                            <input class="form-control" type="text" placeholder="Masukan NISN" name="nisns" > 
+                                            <small style="margin-top: 20px;"class="form-text text-muted">Siswa Tidak akan Terdaftar Jika NISN sudah ada.</small>
+                                      </div>
+                                      <div class="form-group"> 
+                                            <button type="button" class="btn btn-outline-danger" onclick="document.getElementById('<%=user._id%>').style.display='none'" class="cancelbtn">Cancel</button> 
+                                            <button type="submit" class="btn btn-outline-dark"> Save</button> 
+                                        </div> 
+                        </form> 
+                    </div>    
+                    <script>
+                     var modals = document.getElementById('<%=user._id%>');   
+                        window.onclick = function(event) { 
+                        if (event.target == modals) { 
+                        modal.style.display = "none"; 
+                    } 
+                    } 
+                    </script>
+                    
+                                    <a href="hapus/kVmnNhgWOXfYlNMAYoGe8eJC6YCecy44SRNNY5b5fcW0Q56FME2hm/<%=user._id%>" class="btn btn-danger" style="marginTop:'5%';textAlign:center;">Hapus</a>                                
+                                </ul>                                                                                             
+                                <div class="card-footer">
+                                <small class="" style="color:black;"><%= user.date %></small>
+                                </div> 
+                            </div>                                 
+                    </div> 
+                    
+
+                        
+
+                </div>
+                <% }) %>     
+            </div>        
+    </div>  
+    <script> 
+        var modal = document.getElementById('id01'); 
+  
+        window.onclick = function(event) { 
+            if (event.target == modal) { 
+                modal.style.display = "none"; 
+            } 
+        } 
+       
+    </script> 
+<% include shen/footer %>
+

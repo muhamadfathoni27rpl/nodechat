@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Anonymous</title>
+	<link type="text/css" rel="stylesheet" href="../css/stylesheet.css" />
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans Condensed:300italic,300,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
+
+</head>
+
+<body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                  <a class="navbar-brand" href="#">[Mr.Ti]</a>
+                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                            <a class="nav-item nav-link active" href="../start">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">                            
+                            <a class="nav-item nav-link" href="../crud">CRUD</a>     
+                    </li>    
+                    <li class="nav-item">                            
+                            <a class="nav-item nav-link" href="../buat">Chat Hacker</a>     
+					</li>    
+					<li class="nav-item">                            
+                            <a class="nav-item nav-link" href="email">Send E-Mail</a>     
+                    </li>  
+                  </ul>
+                  <div class="nav navbar-nav navbar-right">  
+                      <ul>
+                        <li class="btn btn-info btn-lg">                            
+                            <a class="glyphicon glyphicon-user" href="../profile"></a>     
+                        </li>  
+                        <li class="btn btn-info btn-lg">                            
+                            <a class="glyphicon glyphicon-log-out" href="/out"></a>     
+                        </li>                                               
+                    </ul>            
+                  </div>
+                </div>           
+              </nav>
+	<section class="section">		
+		<div class="connected">
+			<img src="../img/unnamed.jpg" id="creatorImage" />
+			<div class="infoConnected">								
+				<form class="loginForm">
+					<input type="text" id="yourName" placeholder="Nama Samaran" /><br/>					
+					<input type="submit" id="yourEnter" value="ENTER" />
+				</form>
+			</div>
+		</div>
+
+		<div class="personinside">
+			<img src="../img/unnamed.jpg" id="ownerImage" />
+			<div class="infoInside">
+				<h2>dibuat oleh <span class="nickname-chat"></span></h2>
+				<br/>
+				<form class="loginForm">
+					<input type="text" id="hisName" placeholder="Nama Samaran" /><br/>					
+					<input type="submit" id="hisEnter" value="CHAT" />
+				</form>
+			</div>
+		</div>
+
+		<div class="invite-textfield">
+			<h2>Tidak ada Orang Bos</h2>
+			<h5>Undang teman mu melalui ID di kolom URL Bos</h5>
+			<div class="link">
+				<a title="Invite a friend" href="" id="link"></a>
+			</div>
+		</div>
+
+		<div class="left">
+			<img src="../img/unnamed.jpg" id="leftImage" />
+			<div class="info">
+				<h2><span class="nickname-left"></span> Telah Keluar</h2>
+				<h5>Undang teman mu melalui ID di kolom URL Bos</h5>
+			</div>
+		</div>
+
+		<div class="toomanypeople">
+			<h2>Tidak Bisa Gabung Bos</h2>
+			<h5>Room Chat muat untuk 2 orang bos. <a title="New Room" href="/create" id="room">Buat Room</a>?</h5>
+		</div>
+
+		<div class="nomessages">
+			<img src="../img/unnamed.jpg" id="noMessagesImage" />
+			<div class="info">
+				<h2>Terhubung dengan <span class="nickname-chat"></span>.</h2>				
+			</div>
+		</div>
+
+		<div class="chatscreen">
+			<ul class="chats">				
+			</ul>
+		</div>
+	</section>
+	<footer>
+		<form id="chatform">
+			<textarea id="message" placeholder="Tulis Pesan...."></textarea>
+			<input class="glyphicon glyphicon-send" type="submit" id="submit"/>
+		</form>
+	</footer>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="../js/moment.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="../js/chat.js"></script>
+</body>
+</html>

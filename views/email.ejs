@@ -1,0 +1,42 @@
+<% include shen/header %>    
+      <div class="container-contact100">
+
+          <div class="wrap-contact100">
+            <form class="contact100-form validate-form" action="/kirim" method="POST">
+              <span class="contact100-form-title">
+                Kirim Email [Mr.Ti]
+              </span>
+      
+              <div class="wrap-input100 validate-input" data-validate="Masukan Email Anda!!!">
+                <input class="input100" type="email" name="emailku" placeholder="Email Anda">
+                <span class="focus-input100"></span>
+              </div>
+      
+              <div class="wrap-input100 validate-input" data-validate = "Masukan Email Penerima!!!">
+                <input class="input100" type="email" name="emailwong" placeholder="Email Penerima">
+                <span class="focus-input100"></span>
+              </div>
+      
+              <div class="wrap-input100 validate-input" data-validate = "Masukan Subjek">
+                <input class="input100" type="text" name="subject" placeholder="subjek">
+                <span class="focus-input100"></span>
+              </div>
+      
+              <div class="wrap-input100 validate-input" data-validate = "Masukan Pesan ">
+                <textarea class="input100" name="isi" placeholder="Isi Pesan ..."></textarea>
+                <span class="focus-input100"></span>
+              </div>
+      
+              <div class="container-contact100-form-btn">
+                <button class="contact100-form-btn">
+                  <span>
+                    <i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+                    Kirim
+                  </span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+<% include shen/footer %>

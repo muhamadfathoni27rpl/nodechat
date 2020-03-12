@@ -1,0 +1,64 @@
+<% include shen/header %>
+
+<hr>
+<div class="container bootstrap snippet">
+    <div class="row">
+  		<div class="col-sm-10"><h1><%=data.nama%></h1></div>
+    	<div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="http://www.gravatar.com/avatar/28fd20ccec6865e2d5f0e1f4446eb7bf?s=100"></a></div>
+    </div>
+    <div class="row">
+  		<div class="col-sm-3">
+              
+
+      <div class="text-center">
+        <img src="<%=data.image1%>" class="avatar img-circle img-thumbnail" alt="avatar">
+      </div></hr><br>
+
+               
+          <div class="panel panel-default">
+            <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>
+            <div class="panel-body"><a href="www.<%=data.web%>" target="_blank"><%=data.web%></a></div>
+          </div>
+                  
+          
+        </div><!--/col-3-->
+    	<div class="col-sm-9">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#home">Profile</a></li>                   
+              </ul>
+
+              
+          <div class="tab-content">                
+            <div class="tab-pane active" id="home">
+                <hr>                  
+                      <div class="form-group">                          
+                          <div class="col-xs-6">
+                              <label for="first_name"><h4>Nama : <%= data.nama %></h4></label>                                                        
+                          </div>                          
+                          <div class="col-xs-6">
+                                <label for="phone"><h4>Nomor Hp : <%= data.hp %></h4></label>                              
+                            </div>
+                      </div>                    
+                      <br>                        
+                          
+                      </div>        
+                      <br>              
+                      <div class="form-group">                          
+                          <div class="col-xs-6">
+                              <label for="email"><h4>Email : <%= data.email %></h4></label>                              
+                          </div>
+                      </div>                                          
+                      <div class="form-group">
+                           <div class="col-xs-12">
+                                <br>
+                              	<a href="/editprofile" class="btn btn-warning" type="submit"><i class="glyphicon glyphicon-edit"></i> Edit</a>                              	
+                            </div>
+                      </div>              	              
+              <hr>               
+             </div>        
+          </div>
+        </div>
+    </div>
+
+
+<% include shen/footer %>

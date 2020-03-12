@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Upload Form</title>		
+</head>
+<body>	
+	<form method="post" enctype="multipart/form-data" action="/tes">									
+		<input type="file" name="upl">									
+		<input type="submit" class="btn btn-primary">					
+	</form>		
+	<% for (var i = 0; i < data.length; i++) { %>
+	<img src="<%= data[i].image1 %>">					
+	<% } %>		
+</body>
+</html>
